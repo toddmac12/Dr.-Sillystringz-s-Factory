@@ -2,7 +2,7 @@
 
 ## By Anthony McRae
 ## Description
-MVC web application to keep track of their machine repairs,engineers, and the machines they are licensed to fix.
+MVC web application to keep track of a factory's machine repairs,engineers, and the engineers that are licensed to fix each machine.
 
 ## Technologies Used
 * C#
