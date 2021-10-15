@@ -22,20 +22,17 @@ namespace Factory.Controllers
         .FirstOrDefault(engineer => engineer.EngineerId == id);
       return View(thisEngineer);
     }
-
     private readonly FactoryContext _db;
 
     public EngineersController(FactoryContext db)
     {
       _db = db;
     }
-
     public ActionResult Create()
     {
       ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
       return View();
     }
-
     [HttpPost]
     public ActionResult Create(Engineer engineer, int MachineId)
     {
@@ -48,7 +45,6 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult Edit(int id)
     {
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
@@ -67,7 +63,6 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult AddMachine(int id)
     {
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
@@ -100,7 +95,6 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     [HttpPost]
     public ActionResult DeleteMachine(int joinId)
     {

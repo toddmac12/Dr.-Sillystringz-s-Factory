@@ -46,13 +46,11 @@ MVC web application to keep track of a factory's machine repairs,engineers, and 
 * NOTE: Do not include the curly brackets in your code snippet of appsettings.json
 
 
-7. To create a database, navigate to the root and using the terminal at the command prompt, type `dotnet tool install --global dotnet-ef`. If there is an error stating Unable to resolve project, this means the command wasn't run in the correct directory. The command above will create a migration with the name Initial. Note that we can name it anything we want, but it's common for the first migration to contain the word `Initial`. Once we have verified that the migration looks correct and made any necessary changes, we'll run the following command: `dotnet ef database update`. This will automatically update our database to reflect the changes. There is no longer any need for us to directly modify the database in MySQLWorkbench!. Finally, to run the application enter `dotnet run' using the terminal.`  and open ` http://localhost:5000/` in your preferred browser.
+7. To create a database, navigate to the root directory . Using the terminal at the command prompt, type `dotnet tool install --global dotnet-ef`. If there is an error stating Unable to resolve project, this means the command wasn't run in the correct directory. The command above will create a migration file with the name Initial. Note that you can name it anything you want, but it's common for the first migration to contain the word `Initial`. Once we have verified that the migration files looks correct and made any necessary changes, run the following command: `dotnet ef database update`. This will automatically update the database to reflect the changes. Finally, to run the application enter `dotnet run` using the terminal and open ` http://localhost:5000/` in your preferred browser.
   
 ## License
 MIT License
 Copyright (c) [2021] [anthony mcrae]
-
-Distributed under the MIT License. See LICENSE for more information.
 
 ## Known Bugs
 No known bugs at the moment.
