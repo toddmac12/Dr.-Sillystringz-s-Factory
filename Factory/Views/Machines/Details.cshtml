@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models
+@model Factory.Models.Machine
+    <h2>@Html.DisplayFor(model => model.Name)</h2>
+    <h3>Machine Details</h3>
+    <p>@Html.ActionLink("Back to all machines", "Index")</p>
+    <p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
+    <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
+
+    <h5>Current engineers assigned to this machine @Html.DisplayFor(model => model.Name)</h5>
+
+    @if (@Model.JoinEntities.Count == 0)
+    {
+      <p>This machine does not currenlty have any engineers assigned!</p>
+    }
+    else
+    {
+      <h4>Engineers assigned</h4>
+      <ul>
+      @foreach (var join in Model.JoinEntities)
+        {
+          <li>@Html.ActionLink($"{@join.Engineer.Name}", "Details", "Engineers", new {id = join.Engineer.EngineerId}) @using (Html.BeginForm("DeleteMachine", "Engineers"))
+          {
+            @Html.Hidden("joinId", @join.MachineEngineerId)
+            <input type="submit" value="unassign from machine" />
+          }</li>
+        }
+      </ul>
+    }
+ <p>@Html.ActionLink("Home", "Index", "Home")</p>
