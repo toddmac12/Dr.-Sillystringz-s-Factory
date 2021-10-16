@@ -4,4 +4,8 @@
 *.vs
 .fake
 .ionide
+<<<<<<< HEAD
 *.vscode
+=======
+*/.vscode
+>>>>>>> 442548dec5efa629203adc91f716f8eeec57ff4f
